@@ -1,0 +1,41 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+
+
+header {
+  margin: 50px 0px;
+}
+
+form {
+  display: flex;
+}
+
+footer {
+  margin: 50px 0px;
+}
+
+.food-table {
+  border: solid #f7f7f9;
+}
+
+.find-food {
+  margin: 30px 0px;
+  .find-food-search{
+    padding-left: 5px;
+  }
+}
+
+.selection-result{
+  margin-top: 20px;
+  .selection {
+    padding: 10px 5px; 
+  }
+}
+
+.result-item:hover {
+  background-color: yellow;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
