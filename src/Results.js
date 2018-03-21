@@ -16,12 +16,8 @@ class Results extends Component {
                   value={element.ndbno}
                   onClick={this.handleClick}
               >
-              <div className="col-xs-12 col-sm-6 no-pointer" value={element.ndbno}>
-                 {element.name}
-              </div>
+              <div className="col-xs-12 col-sm-6 no-pointer" value={element.ndbno}>{element.name}</div>
               <div className="col-xs-12 col-sm-4 no-pointer" value={element.ndbno}>{element.group}</div>
-              <div className="col-xs-12 col-sm-1 no-pointer" value={element.ndbno}>{element.ndbno}</div>
-              <div className="col-xs-12 col-sm-1 no-pointer" value={element.ndbno}></div>
             </div>
           )});
       //console.log(results);
@@ -47,13 +43,8 @@ class Results extends Component {
               <div className="col-xs-12 col-sm-6">
                 name
               </div>
-              <div className="col-xs-12 col-sm-4">
-                info
-              </div>
-              <div className="col-xs-12 col-sm-1">
-                stat
-              </div>
-              <div className="col-xs-12 col-sm-1">
+              <div className="col-xs-12 col-sm-6">
+                group
               </div>
             </div>
             <div className="results-box">
