@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   handleKeyPress(event) {
-    if(event.charCode==13){
+    if(event.charCode===13){
       event.preventDefault();
     }
 

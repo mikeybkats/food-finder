@@ -8,7 +8,7 @@ class Results extends Component {
   generateResults = (data) => {
     if(data !== undefined && data.item !== undefined){
       let results =
-        data.item.slice(0, 6).map( (element, index) => {
+        data.item.slice(0, this.props.itemsToShow ).map( (element, index) => {
           return (
             <div name="selection"
                   className="row around-xs result-item" 
@@ -20,7 +20,6 @@ class Results extends Component {
               <div className="col-xs-12 col-sm-4 no-pointer" value={element.ndbno}>{element.group}</div>
             </div>
           )});
-      //console.log(results);
       return ( results );  
     }
     else{
@@ -28,8 +27,20 @@ class Results extends Component {
     }
   }
 
+  showMore = (results) => {
+    if(results){
+      return(
+        <div className="row center-xs showmore">
+          <button type="button" onClick={this.props.showMore} >
+            show more</button>
+        </div>
+      );
+    }
+  }
+
   render() {
     let results = this.generateResults(this.props.resultsData);
+    let showMore = this.showMore(results);
     return (
       <div>
         <div className="row around-xs">
@@ -50,6 +61,7 @@ class Results extends Component {
             <div className="results-box">
               {results}
             </div>
+              {showMore}
           </div>
         </div>
       </div>

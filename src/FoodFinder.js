@@ -14,6 +14,7 @@ class FoodFinder extends Component {
       error: '',
       isLoaded: false,
       items: [],
+      itemsToShow: 6,
       selection: []
     };
     this.handleChanges = this.handleChanges.bind(this);
@@ -80,25 +81,22 @@ class FoodFinder extends Component {
     )    
   }
 
-  //handleChanges = ({target}) => {
-    //this.setState({
-      //[target.name]: target.value
-    //}, () => {
-      //if(target.name==='searchQuery'){
-        //this.makeSearchRequest();
-      //}
-    //});
-  //}
-
   handleChanges = (event) => {
     event.preventDefault();
     this.handleSearchBox(event);
-    //this.handleClickSearch(event);
+  }
+  
+  showMore = (event) => {
+    let newNumOfItemsToShow = this.state.itemsToShow + 6;
+    this.setState({
+      itemsToShow: newNumOfItemsToShow
+    });
   }
 
   handleSearchBox = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
+      itemsToShow: 6
     }, () => {
         this.makeSearchRequest();
     });
@@ -121,11 +119,12 @@ class FoodFinder extends Component {
         /> 
         <Results handleClickSearch={this.handleClickSearch} 
                  resultsData={this.state.items}
+                 itemsToShow={this.state.itemsToShow}
+                 showMore={this.showMore}
                  isLoaded={this.state.isLoaded}
                  error={this.state.error}
         />
         <Selection searchSelection={this.state.searchSelection}
-        
         />
       </div>
     );
